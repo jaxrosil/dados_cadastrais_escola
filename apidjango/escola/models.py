@@ -6,7 +6,7 @@ class Aluno(models.Model):
     cpf = models.CharField(max_length=11)
     data_nascimento = models.DateField()
 
-    def _str_(self):
+    def __str__(self):
         return self.nome
 
 class Curso(models.Model):
@@ -19,5 +19,5 @@ class Curso(models.Model):
     descricao = models.CharField(max_length=100)
     nivel = models.CharField(max_length=1, choices=NIVEL, blank=False, null=False, default='B')
 
-    def _str_(self):
+    def __str__(self):
         return self.descricao
